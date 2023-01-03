@@ -1,0 +1,150 @@
+﻿<Window x:Name="window" x:Class="Create_Lofted_Plate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Create_Lofted_Plate"
+        mc:Ignorable="d"
+        Title="Создание марок типа ЯФ" ScrollViewer.CanContentScroll="True" MinWidth="630" MaxWidth="630" MinHeight="430" MaxHeight="430" Padding="0,0,0,0"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <Grid ShowGridLines="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310"/>
+            <ColumnDefinition Width="310"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="35" MaxHeight="35" MinHeight="35"/>
+            <RowDefinition AllowDrop="False" Height="80" MaxHeight="80" MinHeight="80"/>
+            <RowDefinition AllowDrop="False" Height="20" MaxHeight="20" MinHeight="20"/>
+        </Grid.RowDefinitions>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Параметры деталей"  VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Padding="1,1,1,1" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Общая высота" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="HeightAssembly" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" Text="1650" PreviewTextInput="HeightAssembly_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Ширина поясов" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="WidthBeam" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="WidthBeam_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Толщина поясов" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="TopThickness" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="TopThickness_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Припуск нижнего пояса" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="OffsetBeam" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="50" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="OffsetBeam_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Высота стенки" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="HeightWall" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="360" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="HeightWall_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Толщина стенки" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="ThicknessWall" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="25" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="ThicknessWall_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="280">
+            <Grid>
+                <Label Content="Выступ стенки за пояс" Width="150" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <Label Content="мм" Width="65" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="215,0,0,0" Height="26" Padding="1,1,1,5"/>
+                <TextBox x:Name="OffsetWall" HorizontalAlignment="Left" Margin="150,0,0,0" TextWrapping="Wrap" Text="150" VerticalAlignment="Center" Width="60" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="OffsetWall_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="260">
+            <Grid>
+                <Button x:Name="ButtonCreateDetails" Content="Создать лофтинговые пластины" Click="ButtonCreateDetails_Click" FontSize="14" Padding="0,0,0,0" Margin="-5,0,5,0" Height="60" Grid.Row="8" VerticalAlignment="Stretch"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" Width="120" Margin="17,0,0,0">
+            <Grid>
+                <Button x:Name="ButtonResetParametersTab1" Content="Сбросить настройки" Click="ButtonResetParametersTab1_Click" FontSize="10" Padding="0,0,0,0" Margin="3,0,5,0" Height="20" Grid.Row="8" VerticalAlignment="Stretch"/>
+            </Grid>
+        </Border>
+
+
+        <Border HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Атрибуты деталей"  VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Padding="1,1,1,1" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Класс деталей верхнего пояса" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="ClassTop" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Center" Width="85" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="ClassTop_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Класс деталей нижнего пояса" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="ClassBottom" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Width="85" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="ClassBottom_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Класс деталей стенок" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="ClassWall" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Width="85" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" PreviewTextInput="ClassWall_PreviewTextInput"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Материал деталей" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="Material" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" Text="C390-1-6" VerticalAlignment="Center" Width="85" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Width="286">
+            <Grid>
+                <Label Content="Префикс детали" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="PrefixDetail" HorizontalAlignment="Left" Margin="180,0,0,0" TextWrapping="Wrap" Text="515-6." VerticalAlignment="Center" Width="85" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Width="300" Margin="12,0,0,0">
+            <Grid>
+                <Label Content="Префикс сборки" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="PrefixAssembly" HorizontalAlignment="Left" Margin="180,0,0,0" Text="515-6.ЯФ" VerticalAlignment="Center" Width="109" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" MinWidth="109" MaxWidth="109" MinHeight="26" MaxHeight="100" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.IsSharedSizeScope="False"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="300" Margin="12,0,0,0">
+            <Grid>
+                <Label Content="Имя компонента" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Padding="1,1,1,1"/>
+                <TextBox x:Name="ComponentName" HorizontalAlignment="Left" Margin="120,0,0,0" Text="" VerticalAlignment="Center" Width="169" Height="26" VerticalContentAlignment="Center" Padding="1,1,1,1" MinWidth="169" MaxWidth="169" MinHeight="26" MaxHeight="100" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.IsSharedSizeScope="False"/>
+            </Grid>
+        </Border>
+
+        <Border HorizontalAlignment="Left" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" Width="300" Margin="12,0,0,0">
+            <Button x:Name="ButtonCreateComponent" Content="Создать компоненты типадеталь" FontSize="14" Padding="0,0,0,0" Height="60" Grid.Row="8" VerticalAlignment="Stretch" Width="250" Click="ButtonCreateComponent_Click"/>
+        </Border>
+
+        <Separator Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" Height="1" Margin="5,0,0,0"  VerticalAlignment="Top" Width="307" Background="Black"/>
+
+    </Grid>
+
+
+</Window>
